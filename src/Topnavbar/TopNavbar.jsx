@@ -1,6 +1,6 @@
 import React from "react";
 import "./TopNavbar.css";
-import Profile from "./profile.jpg";
+import Profile from "../image/profile.jpg";
 import { Facebook, GitHub, Mail, Search, WhatsApp } from "@material-ui/icons";
 
 function TopNavbar() {
