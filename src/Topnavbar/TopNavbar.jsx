@@ -1,13 +1,33 @@
 import React from "react";
 import "./TopNavbar.css";
+import Profile from "./profile.jpg";
+import { Facebook, GitHub, Mail, Search, WhatsApp } from "@material-ui/icons";
 
 function TopNavbar() {
   return (
-    <>
-      <div className="topleft">left</div>
-      <div className="topcenter">center</div>
-      <div className="topright">right</div>
-    </>
+    <div className="Topbar">
+      <div className="topleft">
+        <Facebook className="facebook" />
+
+        <WhatsApp className="whatsapp" />
+        <GitHub />
+        <Mail className="mail" />
+      </div>
+      <div className="topcenter">
+        <ul className="topList">
+          <li className="topListItem">HOME</li>
+          <li className="topListItem">ABOUT</li>
+          <li className="topListItem">CONTACT</li>
+          <li className="topListItem">LOGOUT</li>
+        </ul>
+      </div>
+
+      <div className="topright">
+        <img src={Profile} alt="profile" />
+
+        <Search />
+      </div>
+    </div>
   );
 }
 
