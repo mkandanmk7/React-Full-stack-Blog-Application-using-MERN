@@ -1,6 +1,7 @@
 import React from "react";
 import "./Sidebar.css";
 import Profile from "../image/profile.jpg";
+import { Facebook, GitHub, Mail, WhatsApp } from "@material-ui/icons";
 
 function Sidebar() {
   return (
@@ -17,15 +18,28 @@ function Sidebar() {
         </p>
       </div>
       <div className="sidebarItem">
-        <span className="sidebarTitle">CATEGORIES</span>
+        <span className="sidebar_title">KEY SKILLS</span>
         <ul className="sidebarList">
-          <li className="sidebarListItem">Life</li>
-          <li className="sidebarListItem">Coding</li>
-          <li className="sidebarListItem">Gym</li>
-          <li className="sidebarListItem">Style</li>
-          <li className="sidebarListItem">Driving</li>
-          <li className="sidebarListItem">Cinema</li>
+          <li className="sidebarListItem">JAVASCRIPT</li>
+          <li className="sidebarListItem">REACT JS</li>
+          <li className="sidebarListItem">NODE JS</li>
+          <li className="sidebarListItem">EXPRESS</li>
+          <li className="sidebarListItem">MONGO DB</li>
+          <li className="sidebarListItem">HTML</li>
+          <li className="sidebarListItem">CSS</li>
+          <li className="sidebarListItem">SASS</li>
+          <li className="sidebarListItem">MATERIAL UI</li>
         </ul>
+      </div>
+      <div className="sidebarItem">
+        <span className="sidebar_title">Follow Me</span>
+        <div className="sidebarSocial">
+          <Facebook className="facebook" />
+
+          <WhatsApp className="whatsapp" />
+          <GitHub />
+          <Mail className="mail" />
+        </div>
       </div>
     </div>
   );
