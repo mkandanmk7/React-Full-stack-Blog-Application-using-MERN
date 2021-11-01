@@ -1,6 +1,6 @@
 import React from "react";
 import "./Header.css";
-import bg from "../image/bg.jpg";
+import bg from "../../image/bg.jpg";
 
 function Header() {
   return (

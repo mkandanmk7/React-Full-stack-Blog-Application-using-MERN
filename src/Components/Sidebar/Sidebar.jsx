@@ -1,6 +1,6 @@
 import React from "react";
 import "./Sidebar.css";
-import Profile from "../image/profile.jpg";
+import Profile from "../../image/profile.jpg";
 import { Facebook, GitHub, Mail, WhatsApp } from "@material-ui/icons";
 
 function Sidebar() {
