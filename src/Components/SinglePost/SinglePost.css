@@ -1,0 +1,63 @@
+.singlePost {
+  display: flex;
+  flex: 9;
+}
+
+.singlePostWrapper {
+  display: flex;
+  padding: 20px;
+  padding-right: 0;
+  flex-direction: column;
+}
+.singlePostWrapper > img {
+  box-shadow: rgba(17, 17, 26, 0.1) 0px 1px 0px,
+    rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 48px;
+
+  width: 100%;
+  height: 300px;
+  border-radius: 10px;
+  object-fit: cover;
+}
+.singlePostTitle {
+  text-align: center;
+  margin: 10px;
+  font-size: 2rem;
+  font-weight: 700;
+  color: #333;
+  font-family: "Josefin Sans", sans-serif;
+}
+.singlePostEdit {
+  display: flex;
+  padding: 15px;
+  /* height: 50px; */
+  /* background: rgb(148, 55, 55); */
+  align-items: center;
+  justify-content: end;
+}
+.singlePostEdit > .MuiSvgIcon-root {
+  /* font-size: 1.5rem; */
+  margin-left: 10px;
+}
+.singlePostEdit:first-child {
+  color: aquamarine;
+}
+.singlePostInfo {
+  display: flex;
+  font-family: sans-serif;
+  margin-bottom: 15px;
+  font-size: 15px;
+  align-items: center;
+  justify-content: space-between;
+}
+.singlePostDesc {
+  font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+  color: #777;
+  line-height: 23px;
+  font-size: 18px;
+}
+
+.singlePostDesc::first-letter {
+  margin-left: 20px;
+  font-size: 22px;
+  font-weight: 700;
+}
