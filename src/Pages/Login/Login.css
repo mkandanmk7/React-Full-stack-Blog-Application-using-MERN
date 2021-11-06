@@ -31,24 +31,28 @@
 }
 .loginForm > label {
   margin: 10px 0;
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 20px;
+  font-weight: 600;
 }
 
 .loginInput {
   padding: 10px;
   background: #fff;
   border: none;
+  border-radius: 5px;
 }
 
 .loginButton {
   margin-top: 20px;
   background: lightcoral;
-  border-radius: 10px;
+  border-radius: 5px;
   border: none;
   color: #fff;
   font-size: 20px;
   font-weight: bold;
   width: 100px;
-  padding: 10px;
+  padding: 5px 10px;
   align-self: center;
   box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
     rgba(0, 0, 0, 0.3) 0px 30px 60px -30px,
@@ -58,13 +62,13 @@
   position: absolute;
   top: 60px;
   right: 30px;
-  border-radius: 10px;
+  border-radius: 5px;
   border: none;
   color: #fff;
   font-size: 20px;
   font-weight: bold;
   width: 100px;
-  padding: 10px;
+  padding: 5px 10px;
   background-color: rgb(74, 130, 214);
   box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
     rgba(0, 0, 0, 0.3) 0px 30px 60px -30px,
