@@ -8,7 +8,9 @@ import Settings from "./Pages/Settings/Settings";
 import Login from "./Pages/Login/Login";
 import Register from "./Pages/Register/Register";
 import { BrowserRouter as Router, Link, Route, Switch } from "react-router-dom";
+import Post from "./Components/Post/Post";
 function App() {
+  const user = false;
   return (
     <Router>
       <TopNavbar />
@@ -16,12 +18,13 @@ function App() {
         <Route path="/">
           <Home />
         </Route>
-        <Route path="/login">
-          <Login />
+        <Route path="/login">{user ? <Home /> : <Login />}</Route>
+        <Route path="/register">{user ? <Home /> : <Register />}</Route>
+        <Route path="/write">{user ? <Write /> : <Register />}</Route>
+        <Route path="/post/:postId">
+          <Single />
         </Route>
-        <Route path="/register">
-          <Register />
-        </Route>
+        <Route path="/settings">{user ? <Settings /> : <Register />}</Route>
       </Switch>
     </Router>
   );
