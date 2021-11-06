@@ -32,7 +32,7 @@
   /* height: 50px; */
   /* background: rgb(148, 55, 55); */
   align-items: center;
-  justify-content: end;
+  justify-content: flex-end;
 }
 .singlePostEdit > .MuiSvgIcon-root {
   /* font-size: 1.5rem; */

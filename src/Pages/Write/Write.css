@@ -1,10 +1,22 @@
 .write {
   padding-top: 50px;
 }
+.writeImg {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 150px;
+
+  height: 250px;
+  object-fit: cover;
+  width: 70vw;
+  border-radius: 10px;
+}
 .writeForm {
+  position: relative;
 }
 .writeFormGroup {
-  /* margin-left: 150px; */
+  margin-left: 150px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -18,7 +30,6 @@ label > .MuiSvgIcon-root {
   height: 20px;
   width: 20px;
   padding: 5px;
-
   border: 2px solid;
   display: flex;
   align-items: center;
@@ -33,4 +44,25 @@ label > .MuiSvgIcon-root {
   font-size: 30px;
   border: none;
   padding: 15px;
+  width: 70vw;
+}
+.writeInput:focus {
+  outline: none;
+}
+
+.writeSubmit {
+  position: absolute;
+  top: 20px;
+  right: 50px;
+  border-radius: 6px;
+  padding: 10px 15px;
+  color: #fff;
+  background: rgba(13, 151, 25, 0.7);
+  border: none;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
+    rgba(0, 0, 0, 0.3) 0px 30px 60px -30px,
+    rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 600;
 }

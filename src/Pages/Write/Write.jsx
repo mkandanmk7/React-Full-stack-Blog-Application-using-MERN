@@ -1,15 +1,13 @@
 import { Add } from "@material-ui/icons";
 import React from "react";
 import "./Write.css";
+import postImg from "../../image/bg.jpg";
 
 function Write() {
   return (
     <div className="write">
-      <form
-        action="
-      "
-        className="writeForm"
-      >
+      <img src={postImg} alt="" className="writeImg" />
+      <form className="writeForm">
         <div className="writeFormGroup">
           <label htmlFor="fileInput">
             <Add />
