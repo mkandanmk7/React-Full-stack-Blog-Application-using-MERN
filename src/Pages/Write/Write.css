@@ -49,7 +49,10 @@ label > .MuiSvgIcon-root {
 .writeInput:focus {
   outline: none;
 }
-
+.writeText {
+  font-size: 18px;
+  height: 100vh;
+}
 .writeSubmit {
   position: absolute;
   top: 20px;
