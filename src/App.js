@@ -11,12 +11,12 @@ import Register from "./Pages/Register/Register";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Post from "./Components/Post/Post";
 function App() {
-  const user = true;
+  const user = false;
   return (
     <Router>
       <TopNavbar />
       <Routes>
-        <Route exact path="/" element={<Home />} />
+        <Route path="/" element={<Home />} />
         <Route path="/login" element={user ? <Home /> : <Login />} />
         <Route path="/register" element={user ? <Home /> : <Register />} />
         <Route path="/write" element={user ? <Write /> : <Register />} />
