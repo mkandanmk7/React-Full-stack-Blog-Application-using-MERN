@@ -6,8 +6,9 @@
   position: sticky;
   top: 0;
   font-family: "Josefin sans", sans-serif;
+  background: #fff;
 
-  background-image: linear-gradient(to right, rgba(183, 247, 167, 0.829), #cdc);
+  /* background-image: linear-gradient(to right, rgba(183, 247, 167, 0.829), #cdc); */
 }
 .topleft > .MuiSvgIcon-root {
   margin-left: 7px;
