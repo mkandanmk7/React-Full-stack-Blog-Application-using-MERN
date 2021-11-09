@@ -9,7 +9,7 @@ import Login from "./Pages/Login/Login";
 import Register from "./Pages/Register/Register";
 
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Post from "./Components/Post/Post";
+// import Post from "./Components/Post/Post";
 function App() {
   const user = false;
   return (

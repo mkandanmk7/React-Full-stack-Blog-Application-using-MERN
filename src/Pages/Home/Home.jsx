@@ -4,9 +4,12 @@ import Posts from "../../Components/Posts/Posts";
 import Sidebar from "../../Components/Sidebar/Sidebar";
 import "./Home.css";
 import axios from "axios";
+import { useLocation } from "react-router";
 
 function Home() {
   const [posts, setPosts] = useState([]);
+  const { search } = useLocation();
+  console.log(search);
 
   //get posts
   const fetchPosts = async () => {
@@ -20,7 +23,7 @@ function Home() {
   useEffect(() => {
     console.log("Posts mounted in home");
     fetchPosts();
-  }, []);
+  }, [search]);
   return (
     <>
       <Header />

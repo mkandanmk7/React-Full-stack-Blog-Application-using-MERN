@@ -1,9 +1,24 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./Sidebar.css";
 import Profile from "../../image/profile.jpg";
 import { Facebook, GitHub, Mail, WhatsApp } from "@material-ui/icons";
+import axios from "axios";
+import { Link } from "react-router-dom";
 
 function Sidebar() {
+  const [cates, setCates] = useState([]);
+  //get Category
+  const getCategory = async () => {
+    const res = await axios.get(
+      "https://muthu-blog-server-api.herokuapp.com/api/categories"
+    );
+    // console.log(res.data.details);
+    setCates(res.data.details);
+  };
+
+  useEffect(() => {
+    getCategory();
+  }, []);
   return (
     <div className="sidebar">
       <div className="sidebar_item">
@@ -29,6 +44,15 @@ function Sidebar() {
           <li className="sidebarListItem">CSS</li>
           <li className="sidebarListItem">SASS</li>
           <li className="sidebarListItem">MATERIAL UI</li>
+        </ul>
+
+        <span className="sidebar_title">CATEGORIES</span>
+        <ul className="sidebarList">
+          {cates.map((cate) => (
+            <Link key={cate._id} className="link" to={`/?cat=${cate.name}`}>
+              <li className="sidebarListItem">{cate.name}</li>
+            </Link>
+          ))}
         </ul>
       </div>
       <div className="sidebarItem">

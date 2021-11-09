@@ -4,6 +4,7 @@ import PostImg from "../../image/cat.jpg";
 import { Delete, Edit } from "@material-ui/icons";
 import { useLocation } from "react-router";
 import axios from "axios";
+import { Link } from "react-router-dom";
 
 function SinglePost() {
   const [post, setPost] = useState({});
@@ -39,7 +40,10 @@ function SinglePost() {
         </div>
         <div className="singlePostInfo">
           <span className="author">
-            Author: <b>{post.username}</b>{" "}
+            Author:
+            <Link className="link" to={`/?user=${post.username}`}>
+              <b>{post.username}</b>{" "}
+            </Link>
           </span>
           <span className="date">
             {new Date(post.createdAt).toDateString()}

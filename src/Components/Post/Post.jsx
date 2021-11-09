@@ -15,11 +15,15 @@ export default function Post({ post }) {
 
       <div className="post_info">
         <div className="post_categories">
-          {post.categories.map((cate) => {
-            return <span className="post_cate">{cate}</span>;
+          {post.categories.map((cate, index) => {
+            return (
+              <span key={index} className="post_cate">
+                {cate}
+              </span>
+            );
           })}
         </div>
-        <Link to={`/post/${post._id}`} className="link">
+        <Link key={post._id} to={`/post/${post._id}`} className="link">
           <span className="post_title">{post.title}</span>
         </Link>
         <span className="time">{new Date(post.createdAt).toDateString()}</span>
