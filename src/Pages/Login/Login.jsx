@@ -1,5 +1,5 @@
 import axios from "axios";
-import React, { useContext, useRef, useState } from "react";
+import React, { useContext, useRef } from "react";
 import { Link } from "react-router-dom";
 import { Context } from "../../Context/Context";
 import "./Login.css";
@@ -10,7 +10,7 @@ function Login() {
   let userRef = useRef();
   let passwordRef = useRef();
 
-  const { user, dispatch, isFetching } = useContext(Context);
+  const { dispatch, isFetching } = useContext(Context);
   // console.log("data", isFetching);
 
   const handleSubmit = async (event) => {
@@ -32,7 +32,7 @@ function Login() {
       dispatch({ type: "LOGIN_FAILURE" });
     }
   };
-  console.log(user);
+  console.log(isFetching);
 
   return (
     <div className="login">
@@ -52,7 +52,7 @@ function Login() {
           placeholder="Enter your password..."
           ref={passwordRef}
         />
-        <button className="loginButton" type="submit">
+        <button className="loginButton" type="submit" disabled={isFetching}>
           Login
         </button>
       </form>

@@ -1,4 +1,4 @@
-import react from "react";
+// import react from "react";
 import "./Post.css";
 import cat from "../../image/cat.jpg";
 import { Link } from "react-router-dom";

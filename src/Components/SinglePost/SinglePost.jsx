@@ -13,15 +13,15 @@ function SinglePost() {
   // console.log(location.pathname.split("/")[2]);
   const postId = location.pathname.split("/")[2];
 
-  const getSinglePost = async () => {
-    const res = await axios.get(
-      `https://muthu-blog-server-api.herokuapp.com/api/posts/${postId}`
-    );
-    // console.log(res.data.details);
-    setPost(res.data.details);
-  };
   //postId useEffect
   useEffect(() => {
+    const getSinglePost = async () => {
+      const res = await axios.get(
+        `https://muthu-blog-server-api.herokuapp.com/api/posts/${postId}`
+      );
+      // console.log(res.data.details);
+      setPost(res.data.details);
+    };
     getSinglePost();
   }, [postId]);
   return (

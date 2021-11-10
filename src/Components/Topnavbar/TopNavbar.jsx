@@ -2,7 +2,7 @@ import React from "react";
 import "./TopNavbar.css";
 import { Link } from "react-router-dom";
 import Profile from "../../image/profile.jpg";
-import { Facebook, GitHub, Mail, Search, WhatsApp } from "@material-ui/icons";
+import { Facebook, GitHub, Mail, WhatsApp } from "@material-ui/icons";
 
 function TopNavbar() {
   const user = false;
