@@ -5,7 +5,7 @@ import Profile from "../../image/profile.jpg";
 import { Facebook, GitHub, Mail, Search, WhatsApp } from "@material-ui/icons";
 
 function TopNavbar() {
-  const user = true;
+  const user = false;
   return (
     <div className="Topbar">
       <div className="topleft">
@@ -50,8 +50,6 @@ function TopNavbar() {
             </li>
           </ul>
         )}
-
-        <Search />
       </div>
     </div>
   );
