@@ -1,11 +1,12 @@
-import React from "react";
+import React, { useContext } from "react";
 import "./TopNavbar.css";
 import { Link } from "react-router-dom";
 import Profile from "../../image/profile.jpg";
 import { Facebook, GitHub, Mail, WhatsApp } from "@material-ui/icons";
+import { Context } from "../../Context/Context";
 
 function TopNavbar() {
-  const user = false;
+  const { user } = useContext(Context);
   return (
     <div className="Topbar">
       <div className="topleft">

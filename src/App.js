@@ -9,9 +9,11 @@ import Login from "./Pages/Login/Login";
 import Register from "./Pages/Register/Register";
 
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { useContext } from "react";
+import { Context } from "./Context/Context";
 // import Post from "./Components/Post/Post";
 function App() {
-  const user = false;
+  const { user } = useContext(Context);
   return (
     <Router>
       <TopNavbar />
