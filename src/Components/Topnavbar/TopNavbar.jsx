@@ -6,7 +6,15 @@ import { Facebook, GitHub, Mail, WhatsApp } from "@material-ui/icons";
 import { Context } from "../../Context/Context";
 
 function TopNavbar() {
-  const { user } = useContext(Context);
+  const { user, dispatch } = useContext(Context);
+
+  //logout
+  const handleLogout = () => {
+    console.log("in logout");
+    console.log("logout user;", user);
+    dispatch({ type: "LOGOUT" }); //it wil return user,isfetching,error states
+    console.log("after logout: ", user);
+  };
   return (
     <div className="Topbar">
       <div className="topleft">
@@ -30,7 +38,9 @@ function TopNavbar() {
               WRITE
             </Link>
           </li>
-          <li className="topListItem">{user && "LOGOUT"}</li>
+          <li className="topListItem" onClick={handleLogout}>
+            {user && "LOGOUT"}
+          </li>
         </ul>
       </div>
 
