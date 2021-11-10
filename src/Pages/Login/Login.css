@@ -42,6 +42,9 @@
   border: none;
   border-radius: 5px;
 }
+.loginInput:focus {
+  outline: none;
+}
 
 .loginButton {
   margin-top: 20px;

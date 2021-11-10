@@ -4,11 +4,13 @@ import cat from "../../image/cat.jpg";
 import { Link } from "react-router-dom";
 
 export default function Post({ post }) {
-  console.log(post);
+  const PF = "https://muthu-blog-server-api.herokuapp.com/images/";
+
+  // console.log(post);  //returns post details
   return (
     <div className="post" key={post._id}>
       {post.photo ? (
-        <img src={post.photo} alt="cat" />
+        <img src={PF + post.photo} alt="cat" />
       ) : (
         <img src={cat} alt="cat" />
       )}

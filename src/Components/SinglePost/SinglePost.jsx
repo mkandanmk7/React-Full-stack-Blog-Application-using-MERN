@@ -10,6 +10,8 @@ function SinglePost() {
   const [post, setPost] = useState({});
   const location = useLocation();
 
+  const PF = "https://muthu-blog-server-api.herokuapp.com/images/";
+
   // console.log(location.pathname.split("/")[2]);
   const postId = location.pathname.split("/")[2];
 
@@ -28,7 +30,7 @@ function SinglePost() {
     <div className="singlePost">
       <div className="singlePostWrapper">
         {post.photo ? (
-          <img src={post.photo} alt="" className="singlePostImg" />
+          <img src={PF + post.photo} alt="" className="singlePostImg" />
         ) : (
           <img src={PostImg} alt="" className="singlePostImg" />
         )}

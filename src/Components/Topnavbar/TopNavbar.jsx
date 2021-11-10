@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import "./TopNavbar.css";
 import { Link } from "react-router-dom";
-import Profile from "../../image/profile.jpg";
+import Profile from "../../image/profilePic.png";
 import { Facebook, GitHub, Mail, WhatsApp } from "@material-ui/icons";
 import { Context } from "../../Context/Context";
 
@@ -10,10 +10,7 @@ function TopNavbar() {
 
   //logout
   const handleLogout = () => {
-    console.log("in logout");
-    console.log("logout user;", user);
     dispatch({ type: "LOGOUT" }); //it wil return user,isfetching,error states
-    console.log("after logout: ", user);
   };
   return (
     <div className="Topbar">
@@ -46,7 +43,11 @@ function TopNavbar() {
 
       <div className="topright">
         {user ? (
-          <img src={Profile} alt="profile" />
+          user.profilePic ? (
+            <img src={user.profilePic} alt="profile" />
+          ) : (
+            <img src={Profile} alt="profile" />
+          )
         ) : (
           <ul className="topList">
             <li className="topListItem">
