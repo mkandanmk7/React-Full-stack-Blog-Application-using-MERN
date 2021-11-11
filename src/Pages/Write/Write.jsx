@@ -45,7 +45,7 @@ function Write() {
       );
       console.log(res.data);
       // console.log(res.data);
-      // window.location.replace(`post/${res.data._id}`);
+      window.location.replace(`post/${res.data.post._id}`);
     } catch (error) {
       console.log("error in new post", error);
     }

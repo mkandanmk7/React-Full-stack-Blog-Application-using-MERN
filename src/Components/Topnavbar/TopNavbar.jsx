@@ -9,6 +9,8 @@ function TopNavbar() {
   const { user, dispatch } = useContext(Context);
   console.log(user);
 
+  const profPic = "https://muthu-blog-server-api.herokuapp.com/images/";
+
   //logout
   const handleLogout = () => {
     dispatch({ type: "LOGOUT" }); //it wil return user,isfetching,error states
@@ -44,20 +46,20 @@ function TopNavbar() {
 
       <div className="topright">
         {user ? (
-          <Link to="/settings" className="link">
-            <img className="topImg" src={user.profilePic} alt="profile" />
-          </Link>
+          user.profilePic ? (
+            <Link to="/settings" className="link">
+              <img
+                className="topImg"
+                src={profPic + user.profilePic}
+                alt="profile"
+              />
+            </Link>
+          ) : (
+            <Link to="/settings" className="link">
+              <img className="topImg" src={Profile} alt="profile" />
+            </Link>
+          )
         ) : (
-          // user.profilePic ? (
-          //   <Link to="/settings" className="link">
-          //     <img className="topImg" src={user.profilePic} alt="profile" />
-          //   </Link>
-          // ) : (
-          //   <Link to="/settings" className="link">
-          //     <img className="topImg" src={Profile} alt="profile" />
-          //   </Link>
-          // )
-          // ) :
           <ul className="topList">
             <li className="topListItem">
               <Link to="/login" className="link">

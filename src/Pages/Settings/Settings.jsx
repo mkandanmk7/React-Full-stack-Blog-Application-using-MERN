@@ -1,23 +1,26 @@
 import React, { useContext, useState } from "react";
 import Sidebar from "../../Components/Sidebar/Sidebar";
 import "./Settings.css";
-import profile from "../../image/profile.jpg";
+import profile from "../../image/profilePic.png";
 import { AccountCircle } from "@material-ui/icons";
 import axios from "axios";
 import { Context } from "../../Context/Context";
 
 function Settings() {
-  const { user } = useContext(Context);
+  const { user, dispatch } = useContext(Context);
 
   const profPic = "https://muthu-blog-server-api.herokuapp.com/images/";
   const [file, setFile] = useState(null);
   const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [success, setSuccess] = useState(false);
 
   //submit updated data
   const handleSubmit = async (e) => {
     e.preventDefault();
+    //update start action
+    dispatch({ type: "UPDATE_START" });
 
     const updatedUser = {
       userId: user._id,
@@ -49,8 +52,11 @@ function Settings() {
         `https://muthu-blog-server-api.herokuapp.com/api/users/${user._id}`,
         updatedUser
       );
+      setSuccess(true);
+      dispatch({ type: "UPDATE_SUCCESS", payload: res.data.updateUser });
       console.log(res.data);
     } catch (error) {
+      dispatch({ type: "UPDATE_FAILURE" });
       console.log(error);
     }
   };
@@ -65,7 +71,13 @@ function Settings() {
           <label>Profile Picture</label>
           <div className="settingsPP">
             <img
-              src={file ? URL.createObjectURL(file) : profPic.user.profilePic}
+              src={
+                file
+                  ? file
+                    ? URL.createObjectURL(file)
+                    : profPic + user.profilePic
+                  : profile
+              }
               alt="profile"
               className="SettingsProfile"
             />
@@ -101,6 +113,9 @@ function Settings() {
           <button className="settingsSubmit" type="submit">
             Update
           </button>
+          {success && (
+            <h3 className="success">Profile updated successfully...</h3>
+          )}
         </form>
       </div>
       <Sidebar />
