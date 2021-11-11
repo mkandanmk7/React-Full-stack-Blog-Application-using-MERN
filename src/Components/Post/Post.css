@@ -1,9 +1,13 @@
+@import url("https://fonts.googleapis.com/css2?family=Mochiy+Pop+One&display=swap");
 .post {
-  width: 400px;
+  width: 300px;
+  background: rgba(0, 0, 0, 0.2);
+  padding: 15px 20px;
   margin: 0 25px 40px 25px;
   display: flex;
 
   flex-direction: column;
+  align-items: center;
 }
 .post > img {
   object-fit: cover;
@@ -28,13 +32,13 @@
   cursor: pointer;
 }
 .post_title {
-  font-family: "Josefin Sans", sans-serif;
+  font-family: "Mochiy Pop One", sans-serif;
   padding-bottom: 8px;
   font-size: 1.3rem;
-  font-weight: 700;
+  font-weight: 600;
+  color: rgb(197, 69, 69);
   text-align: center;
   cursor: pointer;
-  margin-top: 15px;
 }
 .time {
   position: relative;
