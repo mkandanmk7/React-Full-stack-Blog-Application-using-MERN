@@ -105,7 +105,7 @@ function SinglePost() {
           <span className="author">
             Author:
             <Link className="link" to={`/?user=${post.username}`}>
-              <b>{post.username}</b>{" "}
+              <b>{post.username}</b>
             </Link>
           </span>
           <span className="date">

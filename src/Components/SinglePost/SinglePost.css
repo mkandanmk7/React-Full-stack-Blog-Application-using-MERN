@@ -8,15 +8,17 @@
 
 .singlePostWrapper {
   display: flex;
+  background: url("../../image/postbg.jpg");
   padding: 0 20px 20px 20px;
-  padding-right: 0;
+  width: 100%;
   flex-direction: column;
 }
 .singlePostWrapper > img {
+  align-self: center;
   box-shadow: rgba(17, 17, 26, 0.1) 0px 1px 0px,
     rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 48px;
 
-  width: 100%;
+  width: 80%;
   height: 300px;
   border-radius: 10px;
   object-fit: cover;
@@ -24,9 +26,12 @@
 .singlePostTitle {
   text-align: center;
   margin: 10px;
+
   font-size: 2rem;
   font-weight: 700;
-  color: #333;
+  color: rgb(206, 206, 211);
+
+  /* filter: drop-shadow(1px 5px 10px #fff); */
   padding: 7px 0;
   font-family: "Josefin Sans", sans-serif;
 }
@@ -58,12 +63,20 @@
   font-family: sans-serif;
   margin-bottom: 15px;
   font-size: 15px;
+  font-weight: 600;
   align-items: center;
   justify-content: space-between;
 }
+.author {
+  margin-left: 20px;
+  font-size: 1rem;
+}
 .singlePostDesc {
   font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
-  color: #777;
+  color: #fff;
+  align-self: center;
+  width: 80%;
+
   line-height: 23px;
   font-size: 18px;
 }

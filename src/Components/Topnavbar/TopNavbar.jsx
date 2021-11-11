@@ -14,6 +14,7 @@ function TopNavbar() {
   //logout
   const handleLogout = () => {
     dispatch({ type: "LOGOUT" }); //it wil return user,isfetching,error states
+    window.location.reload("/login");
   };
   return (
     <div className="Topbar">
