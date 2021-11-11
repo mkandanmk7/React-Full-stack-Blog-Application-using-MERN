@@ -25,7 +25,7 @@ function Login() {
         }
       );
 
-      dispatch({ type: "LOGIN_SUCCESS", payload: res.data.details });
+      dispatch({ type: "LOGIN_SUCCESS", payload: res.data.others });
       userRef = "";
       passwordRef = "";
     } catch (error) {

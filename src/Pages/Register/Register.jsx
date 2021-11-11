@@ -23,8 +23,8 @@ function Register() {
           password,
         }
       );
-      res.data && window.location.replace("/login");
-      console.log(res.data.details);
+      res.data.user && window.location.replace("/login");
+      // console.log(res.data);
     } catch (error) {
       setError(true);
       console.log("Error is:", error);

@@ -7,6 +7,7 @@ import { Context } from "../../Context/Context";
 
 function TopNavbar() {
   const { user, dispatch } = useContext(Context);
+  console.log(user);
 
   //logout
   const handleLogout = () => {
@@ -43,12 +44,20 @@ function TopNavbar() {
 
       <div className="topright">
         {user ? (
-          user.profilePic ? (
-            <img src={user.profilePic} alt="profile" />
-          ) : (
-            <img src={Profile} alt="profile" />
-          )
+          <Link to="/settings" className="link">
+            <img className="topImg" src={user.profilePic} alt="profile" />
+          </Link>
         ) : (
+          // user.profilePic ? (
+          //   <Link to="/settings" className="link">
+          //     <img className="topImg" src={user.profilePic} alt="profile" />
+          //   </Link>
+          // ) : (
+          //   <Link to="/settings" className="link">
+          //     <img className="topImg" src={Profile} alt="profile" />
+          //   </Link>
+          // )
+          // ) :
           <ul className="topList">
             <li className="topListItem">
               <Link to="/login" className="link">

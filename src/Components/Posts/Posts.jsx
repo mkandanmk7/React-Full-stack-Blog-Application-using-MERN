@@ -3,6 +3,7 @@ import Post from "../Post/Post";
 import "./Posts.css";
 
 function Posts({ posts }) {
+  console.log(posts);
   return (
     <div className="posts">
       {posts.map((p) => (

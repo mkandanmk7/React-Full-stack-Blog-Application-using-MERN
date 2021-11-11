@@ -13,7 +13,7 @@ function Sidebar() {
       "https://muthu-blog-server-api.herokuapp.com/api/categories"
     );
     // console.log(res.data.details);
-    setCates(res.data.details);
+    setCates(res.data.postCategory);
   };
 
   useEffect(() => {

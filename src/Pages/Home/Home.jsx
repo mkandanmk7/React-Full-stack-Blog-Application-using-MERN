@@ -9,15 +9,15 @@ import { useLocation } from "react-router";
 function Home() {
   const [posts, setPosts] = useState([]);
   const { search } = useLocation();
-  console.log(search);
+  // console.log(search);
 
   //get posts
   const fetchPosts = async () => {
     const res = await axios.get(
       "https://muthu-blog-server-api.herokuapp.com/api/posts"
     );
-    // console.log(res.data.details);
-    setPosts(res.data.details);
+    console.log(res.data.posts);
+    setPosts(res.data.posts);
   };
 
   useEffect(() => {

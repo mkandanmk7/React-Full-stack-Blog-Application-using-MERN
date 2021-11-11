@@ -33,7 +33,7 @@ function Write() {
           "https://muthu-blog-server-api.herokuapp.com/api/upload",
           data
         );
-        console.log(res);
+        console.log(res.data);
       } catch (error) {
         console.log("error in image:", error);
       }
@@ -44,7 +44,8 @@ function Write() {
         newPost
       );
       console.log(res.data);
-      window.location.replace(`post/${res.data.details._id}`);
+      // console.log(res.data);
+      // window.location.replace(`post/${res.data._id}`);
     } catch (error) {
       console.log("error in new post", error);
     }
