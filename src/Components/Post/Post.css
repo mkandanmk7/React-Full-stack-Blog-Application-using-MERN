@@ -2,7 +2,9 @@
 .post {
   width: 300px;
   height: 400px;
-  background: rgba(182, 158, 158, 0.8);
+  /* background: rgba(182, 158, 158, 0.8); */
+  background-color: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(8px);
   padding: 15px 20px;
   margin: 0 25px 40px 25px;
   border-radius: 5px;

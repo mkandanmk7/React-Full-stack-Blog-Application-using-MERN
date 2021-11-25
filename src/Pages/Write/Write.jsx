@@ -1,14 +1,17 @@
 import { Add } from "@material-ui/icons";
 import React, { useContext, useState } from "react";
 import "./Write.css";
-import postImg from "../../image/bg.jpg";
+// import postImg from "../../image/bg.jpg";
 import axios from "axios";
 import { Context } from "../../Context/Context";
+import Loader from "react-loader-spinner";
 
 function Write() {
   const [title, setTitle] = useState("");
   const [desc, setDesc] = useState("");
   const [file, setFile] = useState(null);
+  const [loading, setLoading] = useState(false);
+  // const [photo,setPhoto]=useState("");
 
   const { user } = useContext(Context);
 
@@ -22,8 +25,10 @@ function Write() {
       desc,
     };
     if (file) {
+      console.log(file);
       const data = new FormData();
       const filename = Date.now() + file.name;
+      console.log(filename);
       data.append("name", filename);
       data.append("file", file);
       newPost.photo = filename;
@@ -39,24 +44,25 @@ function Write() {
       }
     }
     try {
+      setLoading(true);
       const res = await axios.post(
         "https://muthu-blog-server-api.herokuapp.com/api/posts",
         newPost
       );
       console.log(res.data);
       // console.log(res.data);
+      setLoading(false);
       window.location.replace(`post/${res.data.post._id}`);
     } catch (error) {
-      console.log("error in new post", error);
+      setLoading(false);
+      console.log("error in new post", error.message);
     }
   };
 
   return (
     <div className="write">
-      {file ? (
+      {file && (
         <img src={URL.createObjectURL(file)} alt="" className="writeImg" />
-      ) : (
-        <img src={postImg} className="writeImg" alt="postImage" />
       )}
       <form className="writeForm" onSubmit={handleSubmit}>
         <div className="writeFormGroup">
@@ -85,9 +91,15 @@ function Write() {
             onChange={(e) => setDesc(e.target.value)}
           ></textarea>
         </div>
-        <button className="writeSubmit" type="submit">
-          Publish
-        </button>
+        {loading ? (
+          <div className="d-flex justify-content-center submit m-5">
+            <Loader type="Bars" color="#25283D" height={50} width={50} />
+          </div>
+        ) : (
+          <button className="writeSubmit" type="submit">
+            Publish
+          </button>
+        )}
       </form>
     </div>
   );

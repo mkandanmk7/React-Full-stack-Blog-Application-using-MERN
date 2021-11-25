@@ -11,6 +11,7 @@ import Register from "./Pages/Register/Register";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { useContext } from "react";
 import { Context } from "./Context/Context";
+import Sidebar from "./Components/Sidebar/Sidebar";
 // import Post from "./Components/Post/Post";
 function App() {
   const { user } = useContext(Context);
@@ -19,6 +20,8 @@ function App() {
       <TopNavbar />
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="/about" element={<Sidebar />} />
+
         <Route path="/login" element={user ? <Home /> : <Login />} />
         <Route path="/register" element={user ? <Home /> : <Register />} />
         <Route path="/write" element={user ? <Write /> : <Register />} />

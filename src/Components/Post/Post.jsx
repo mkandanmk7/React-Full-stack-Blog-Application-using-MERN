@@ -1,6 +1,6 @@
 // import react from "react";
 import "./Post.css";
-import cat from "../../image/cat.jpg";
+// import cat from "../../image/cat.jpg";
 import { Link } from "react-router-dom";
 
 export default function Post({ post }) {
@@ -9,11 +9,7 @@ export default function Post({ post }) {
   // console.log(post);  //returns post details
   return (
     <div className="post" key={post._id}>
-      {post.photo ? (
-        <img src={PF + post.photo} alt="cat" />
-      ) : (
-        <img src={cat} alt="cat" />
-      )}
+      {post.photo && <img src={PF + post.photo} alt="post pic" />}
 
       <div className="post_info">
         <div className="post_categories">
