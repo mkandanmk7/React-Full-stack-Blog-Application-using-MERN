@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 import html from "../../image/html.png";
 import css from "../../image/css.png";
 import js from "../../image/javascript.png";
