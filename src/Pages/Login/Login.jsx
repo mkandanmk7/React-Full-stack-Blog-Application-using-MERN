@@ -61,6 +61,28 @@ function Login() {
           Register
         </Link>
       </button>
+      <div style={{ textAlign: "center", marginTop: "10px" }}>
+        <h3
+          style={{ color: "#e72b70", fontWeight: "bold", fontSize: "1.5rem" }}
+        >
+          Use This Credentials for test Purpose
+        </h3>
+        <div
+          style={{
+            color: "#332a2a",
+            fontWeight: "bold",
+            borderTop: "1px solid white",
+          }}
+        >
+          <p>
+            <b>Email</b> : test123
+          </p>
+          <p>
+            {" "}
+            <b>Password</b> : test123
+          </p>
+        </div>
+      </div>
     </div>
   );
 }

@@ -32,6 +32,7 @@ function Home() {
   return (
     <>
       <Header />
+
       <div className="home">
         {loading ? (
           <div className="d-flex justify-content-center m-5">
