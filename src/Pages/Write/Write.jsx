@@ -24,14 +24,25 @@ function Write() {
       title,
       desc,
     };
+    //   export const upload=(token,file)=>{
+    //     const formData=new FormData();
+    //     formData.append('somefile',file);
+    //    return axios.post(`${BASE_URL}/upload`,formData,
+    //     {
+    //         headers:{
+    //             authorization:token
+    //         }
+    //     }
+    //     ).then((res)=>res.data).catch((error)=>(error.response.data));
+    // }
     if (file) {
       console.log(file);
       const data = new FormData();
-      const filename = Date.now() + file.name;
-      console.log(filename);
-      data.append("name", filename);
+      // const filename = Date.now() + file.name;
+      // console.log(filename);
+      // data.append("name", filename);
       data.append("file", file);
-      newPost.photo = filename;
+      newPost.photo = file.name;
 
       try {
         const res = await axios.post(
